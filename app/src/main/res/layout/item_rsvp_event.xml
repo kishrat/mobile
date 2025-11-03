@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_small"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_medium">
+
+        <!-- Event Thumbnail -->
+        <ImageView
+            android:id="@+id/imgThumbnail"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/event_thumbnail_height"
+            android:contentDescription="@string/cd_event_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_event" />
+
+        <!-- Event Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgThumbnail"
+            tools:text="Tech Talk: AI in Healthcare" />
+
+        <!-- Date & Time -->
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:drawablePadding="@dimen/spacing_small"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_body"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            app:drawableTint="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="Nov 15, 2024 • 6:00 PM" />
+
+        <!-- Venue -->
+        <TextView
+            android:id="@+id/tvVenue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:drawablePadding="@dimen/spacing_small"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_body"
+            app:drawableStartCompat="@drawable/ic_location"
+            app:drawableTint="@color/simcoe_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDateTime"
+            tools:text="Library 101" />
+
+        <!-- Capacity -->
+        <TextView
+            android:id="@+id/tvCapacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:drawablePadding="@dimen/spacing_small"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_caption"
+            app:drawableStartCompat="@drawable/ic_people"
+            app:drawableTint="@color/tech_tangerine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvVenue"
+            tools:text="25 / 50 attendees" />
+
+        <!-- Media Badges -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipImage"
+            style="@style/Widget.Material3.Chip.Assist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="Image"
+            android:textColor="@color/primary"
+            android:visibility="gone"
+            app:chipBackgroundColor="@color/surface"
+            app:chipIcon="@drawable/ic_camera"
+            app:chipIconTint="@color/primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCapacity" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVideo"
+            style="@style/Widget.Material3.Chip.Assist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:text="Video"
+            android:textColor="@color/tech_tangerine"
+            android:visibility="gone"
+            app:chipBackgroundColor="@color/surface"
+            app:chipIconTint="@color/tech_tangerine"
+            app:layout_constraintStart_toEndOf="@id/chipImage"
+            app:layout_constraintTop_toTopOf="@id/chipImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

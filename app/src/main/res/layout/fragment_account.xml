@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="@dimen/spacing_medium">
+
+    <!-- Profile Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/profileCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_large">
+
+            <!-- Avatar -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                android:contentDescription="@string/cd_avatar"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="2dp"
+                tools:src="@drawable/ic_account" />
+
+            <!-- Display Name -->
+            <TextView
+                android:id="@+id/tvDisplayName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgAvatar"
+                app:layout_constraintTop_toTopOf="@id/imgAvatar"
+                tools:text="Askha Patel" />
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDisplayName"
+                app:layout_constraintStart_toStartOf="@id/tvDisplayName"
+                app:layout_constraintTop_toBottomOf="@id/tvDisplayName"
+                tools:text="Askha.Patel@ontariotechu.net" />
+
+            <!-- Organizer Badge -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/tvOrganizerBadge"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="Event Organizer"
+                android:textColor="@color/tech_tangerine"
+                android:visibility="gone"
+                app:chipBackgroundColor="@color/surface"
+                app:chipIconTint="@color/tech_tangerine"
+                app:layout_constraintStart_toStartOf="@id/tvDisplayName"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- My Events Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMyEvents"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:backgroundTint="@color/primary"
+        android:text="@string/my_events"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_event"
+        app:iconGravity="start"
+        app:iconTint="@color/text_on_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileCard" />
+
+    <!-- Create Event Button (Only for Organizers) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCreateEvent"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:backgroundTint="@color/simcoe_blue"
+        android:text="@string/create_event"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_calendar"
+        app:iconGravity="start"
+        app:iconTint="@color/text_on_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnMyEvents"
+        tools:visibility="visible" />
+
+    <!-- Logout Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:text="@string/logout"
+        android:textColor="@color/error"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCreateEvent"
+        app:strokeColor="@color/error" />
+
+    <!-- Loading Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

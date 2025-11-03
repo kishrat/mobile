@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Cover Image -->
+            <ImageView
+                android:id="@+id/imgCover"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/event_cover_height"
+                android:contentDescription="@string/cd_event_image"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_event" />
+
+            <!-- Content Group (hidden during loading) -->
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/contentGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tvTitle,tvDateTime,tvVenue,tvOrganizer,tvCapacity,tvAudience,tvDescriptionLabel,tvDescription,mapView,btnNavigate,btnRsvp,btnShare" />
+
+            <!-- Event Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgCover"
+                tools:text="Tech Talk: AI in Healthcare" />
+
+            <!-- Date & Time -->
+            <TextView
+                android:id="@+id/tvDateTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:drawablePadding="@dimen/spacing_small"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_calendar"
+                app:drawableTint="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:text="Nov 15, 2024 • 6:00 PM" />
+
+            <!-- Venue -->
+            <TextView
+                android:id="@+id/tvVenue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:drawablePadding="@dimen/spacing_small"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:drawableTint="@color/simcoe_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDateTime"
+                tools:text="Library 101" />
+
+            <!-- Organizer -->
+            <TextView
+                android:id="@+id/tvOrganizer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:drawablePadding="@dimen/spacing_small"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_account"
+                app:drawableTint="@color/tech_tangerine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvVenue"
+                tools:text="Hosted by CS Club" />
+
+            <!-- Capacity -->
+            <TextView
+                android:id="@+id/tvCapacity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:drawablePadding="@dimen/spacing_small"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_people"
+                app:drawableTint="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOrganizer"
+                tools:text="25 / 50 attendees" />
+
+            <!-- Target Audience (optional) -->
+            <TextView
+                android:id="@+id/tvAudience"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:textColor="@color/simcoe_blue"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCapacity"
+                tools:text="Target: Computer Science Students"
+                tools:visibility="visible" />
+
+            <!-- Description Label -->
+            <TextView
+                android:id="@+id/tvDescriptionLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                android:text="About This Event"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAudience" />
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescriptionLabel"
+                tools:text="Join us for an exciting talk about the future of AI in healthcare. Learn from industry experts and network with fellow students." />
+
+            <!-- Map View -->
+            <fragment
+                android:id="@+id/mapView"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+            <!-- Navigate Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNavigate"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="@string/navigate"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_location"
+                app:iconTint="@color/simcoe_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mapView"
+                app:strokeColor="@color/simcoe_blue" />
+
+            <!-- RSVP Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRsvp"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:backgroundTint="@color/primary"
+                android:text="@string/rsvp"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@id/btnShare"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnNavigate" />
+
+            <!-- Share Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShare"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:text="@string/share"
+                android:textSize="16sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnRsvp"
+                app:layout_constraintTop_toTopOf="@id/btnRsvp"
+                app:strokeColor="@color/tech_tangerine" />
+
+            <!-- Bottom Spacing -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnRsvp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Loading Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

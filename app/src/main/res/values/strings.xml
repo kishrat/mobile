@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Campus Events</string>
+
+    <!-- Auth -->
+    <string name="welcome">Welcome to Campus Events</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="display_name">Display Name</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="logout">Log Out</string>
+    <string name="im_organizer">I\'m an event organizer</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+
+    <!-- Navigation -->
+    <string name="nav_events">Events</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_account">Account</string>
+
+    <!-- Home -->
+    <string name="search_events">Search events...</string>
+    <string name="no_events">No events found</string>
+    <string name="loading">Loading...</string>
+
+    <!-- Event Detail -->
+    <string name="rsvp">RSVP</string>
+    <string name="cancel_rsvp">Cancel RSVP</string>
+    <string name="share">Share</string>
+    <string name="navigate">Navigate</string>
+    <string name="event_full">Event is full</string>
+    <string name="rsvp_success">RSVP successful!</string>
+    <string name="rsvp_cancelled">RSVP cancelled</string>
+    <string name="capacity_format">%1$d / %2$d attendees</string>
+
+    <!-- Create Event -->
+    <string name="create_event">Create Event</string>
+    <string name="event_title">Event Title</string>
+    <string name="description">Description</string>
+    <string name="date_time">Date &amp; Time</string>
+    <string name="max_attendees">Max Attendees</string>
+    <string name="pick_location">Pick Location</string>
+    <string name="target_audience">Target Audience (Optional)</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="no_location_selected">No location selected</string>
+    <string name="event_created">Event created successfully!</string>
+
+    <!-- Account -->
+    <string name="my_events">My Events</string>
+    <string name="create_event_btn">Create Event</string>
+    <string name="no_rsvps">You haven\'t RSVP\'d to any events yet</string>
+
+    <!-- Map -->
+    <string name="campus_map">Campus Map</string>
+
+    <!-- Errors -->
+    <string name="error_empty_fields">Please fill all required fields</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_weak_password">Password must be at least 6 characters</string>
+    <string name="error_auth_failed">Authentication failed</string>
+    <string name="error_generic">Something went wrong</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_event_image">Event image</string>
+    <string name="cd_avatar">User avatar</string>
+    <string name="cd_logo">App logo</string>
+    <string name="events_on_map">%d events on map</string>
+</resources>

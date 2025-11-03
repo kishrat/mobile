@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors from Ontario Tech -->
+    <color name="future_blue">#003C71</color>
+    <color name="simcoe_blue">#0077CA</color>
+    <color name="tech_tangerine">#E75D2A</color>
+
+    <!-- UI Colors -->
+    <color name="primary">@color/future_blue</color>
+    <color name="primary_variant">@color/simcoe_blue</color>
+    <color name="secondary">@color/tech_tangerine</color>
+    <color name="secondary_variant">#D14E20</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_secondary">#FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="error">#B00020</color>
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+
+    <!-- Additional UI -->
+    <color name="divider">#E0E0E0</color>
+    <color name="ripple">#1A000000</color>
+    <color name="purple_500">#9C27B0</color>
+
+</resources>
